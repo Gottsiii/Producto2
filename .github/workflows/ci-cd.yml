@@ -1,0 +1,9 @@
+name: LLM Prompt CI/CD Pipeline
+on: [push]
+jobs:
+  test_llm_prompt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run LLM Testing Script
+        run: python tests/llm_test.py
