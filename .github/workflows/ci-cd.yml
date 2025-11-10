@@ -5,5 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # ESTE ES EL NUEVO PASO QUE GARANTIZA QUE PYTHON ESTE LISTO
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'  # Usa la version mas reciente de Python
+
       - name: Run LLM Testing Script
         run: python tests/llm_test.py
